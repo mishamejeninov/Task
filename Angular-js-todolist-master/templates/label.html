@@ -1,0 +1,66 @@
+<div class="col-lg-6 col-sm-offset-3 text-center">
+    <div class="table-responsive">
+        <form name="form" ng-submit="addNew()">
+            <div class="form-group">
+                <label for="description">
+                    Category
+                </label>
+
+                <input type="text" class="form-control input-xs text-center" ng-model="newLabel.lb_name" placeholder="Insert your label">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary label_add_button" ng-click="submit">
+                        <i class="fa fa-plus icon"></i>
+                        Add task
+                    </button>
+                </div>
+            </form>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Label number
+                        </th>
+                        <th>
+                            Label
+                        </th>
+                        <th>
+                            Edit label
+                        </th>
+                        <th>
+                            Delete label
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="label in labels track by $index">
+                        <td>
+                            {{ $index + 1 }}
+                        </td>
+                        <td>
+                            <input ng-show="editMode" type="text" class="form-control input-xs text-center" ng-model="label.lb_name" required/>
+                            <span data-toggle="tooltip" title="Click To Edit" ng-click="editMode = true" ng-show="!editMode">
+                                {{label.lb_name}}
+                            </span>
+                        </td>
+                        <td>
+                            <button data-toggle="tooltip" title="Click To Edit" data-placement="top" ng-hide="editMode" type="button" ng-click="editMode = true" class="btn btn-primary edit_label_button">
+                                <span class='glyphicon glyphicon-pencil task_button_edit_icon' aria-hidden="true"></span>
+                            </button>
+                            <form ng-show="editMode" ng-submit="editMode = false" ng-click="editLabel(label)">
+                                <span class="btn-group">
+                                    <button type="submit" class="btn btn-success" aria-label="Left Align">
+                                        <span class='glyphicon glyphicon-floppy-saved task_button_save_icon'></span>
+                                    </button>
+                                </span>
+                            </form>
+                        </td>
+                        <td>
+                            <button type="button" ng-click="deleteLabel(label.lb_id)" class="btn btn-danger delete_label_button" aria-label="Left Align">
+                                <span class='glyphicon glyphicon-trash' aria-hidden="true"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

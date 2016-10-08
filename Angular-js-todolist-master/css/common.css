@@ -1,0 +1,300 @@
+
+@viewport{
+    zoom: 1.0;
+    width: device-width;
+}
+.user_icon{
+	position: relative;
+  top: 30px;
+  right: 30px;
+	font-size: 15px;
+}
+.user{
+	padding-left: 35px;
+	width: 320px;
+	height: 25px;
+}
+.pass{
+	padding-left: 35px;
+	width: 320px;
+	height: 25px;
+}
+.reg{
+	padding-left: 30px;
+	width: 380px;
+	height: 30px
+}
+.pass_icon{
+	position: relative;
+  top: 30px;
+  right: 60px;
+	font-size: 15px;
+}
+.reg_user_icon{
+	position: relative;
+  top: 32px;
+  right: 65px;
+	font-size: 15px;
+}
+.reg_email_icon{
+	position: relative;
+	top: 32px;
+	right: 30px;
+	font-size: 15px;
+}
+.reg_pass_icon{
+	position: relative;
+	top: 33px;
+	right: 60px;
+	font-size: 15px;
+}
+.gender_icon{
+	position: relative;
+	top: 30px;
+	right: 45px;
+	font-size: 15px;
+	font-weight: bolder;
+
+}
+.login_title{
+	position: relative;
+	top: -8px;
+	left: 130px;
+	margin: 0px;
+	padding: 0px;
+}
+.input_box{
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+.login_box{
+	width: 360px;
+  max-height: 250px;
+	margin-left: 20%;
+  box-shadow: 1px 1px 30px 10px #888888;
+}
+.login_button{
+	position: relative;;
+	top: 30px;
+	left: 35%;
+}
+.reg_title{
+	position: relative;
+	top: -8px;
+	left: 20%;
+	padding: 0px;
+	margin: 0px;
+}
+.register_box{
+	width: 400px;
+  max-height: 480px;
+  margin-left: 20%;
+  box-shadow: 1px 1px 30px 10px #888888;
+}
+.register_input{
+	position: relative;
+  top: 35px;
+	left: 10px;
+}
+.reg_button{
+	position: relative;;
+	top: 15px;
+	left: 30%;
+}
+.task_title{
+  font-size: 36px;
+  position: relative;
+  left: 120px;
+  margin: 0px;
+  padding: 0px;
+}
+.task_box{
+  width: 400px;
+  max-height:245px;
+  margin-left: 20%;
+  box-shadow: 1px 1px 30px 10px #888888;
+}
+.task_input{
+  position: relative;
+  top: 14px;
+  left: 10px;
+}
+.task_description_icon{
+  position: relative;
+  top: 33px;
+  right: 72px;
+  font-size: 15px;
+}
+.task_data_icon{
+  position: relative;
+  top: 33px;
+  right: 55px;
+  font-size: 15px;
+}
+.task_category_icon{
+  position: relative;
+  top: 33px;
+  right: 56px;
+  font-size: 15px;
+}
+.add_button{
+  position: relative;
+  top: 30px;
+  left: 130px;
+
+}
+.complete-true {
+    text-decoration: line-through;
+    color: grey;
+    overflow-y: auto;
+    margin-left: 10px;
+}
+.delete_button{
+  position: relative;
+  top: -9px;
+  left: 508px;
+  width: 40px;
+}
+.task_button_delete_icon{
+  position: relative;
+  top: 2px;
+  right: 1px;
+  font-size: 15px;
+}
+.edit_button{
+  position: relative;
+  top: -9px;
+  left: 404px;
+  width: 40px;
+}
+.task_button_edit_icon{
+  position: relative;
+  top: 2px;
+  right: 1px;
+  font-size: 15px;
+}
+.checbox{
+  position: relative;
+  left: 309px;
+  font-size: 15px;
+}
+.task_number{
+  position: relative;
+  top: 2px;
+  left: 18px;
+  font-size: 15px;
+}
+.t_subject{
+  position: relative;
+  left: -80px;
+  font-size: 15px;
+  width: 50px;
+  height: 50px;
+}
+.t_due_data{
+  position: relative;
+  top: -50px;
+  left: 181px;
+  font-size: 15px;
+}
+
+[class*='category-'] {
+
+position: relative;
+top: -42px;
+left: 370px;
+font-size: 10px;
+background: #444;
+vertical-align: middle;
+color: #fff;
+padding: 10px;
+width: 75px;
+text-align: center;
+border-radius: 2px;
+float: left;;
+font-weight: normal;
+text-transform: uppercase;
+margin-right: 20px;
+}
+.category- { background: transparent; }
+
+.category-Personal { background: #2980b9; }
+
+.category-Work { background: #8e44ad; }
+
+.category-School { background: #f39c12; }
+
+.category-Cleaning { background: #16a085; }
+
+.category-Other { background: #d35400; }
+.input_edit{
+  padding-left: 7px;
+  width: 160px;
+  height: 30px;
+  position: relative;
+  top: -55px;
+  left: 11px;
+}
+.save_button{
+  position: relative;
+  top: -94px;
+  left: 465px;
+  width: 40px;
+}
+.task_button_save_icon{
+  position: relative;
+  top: 2px;
+  right: 1px;
+  font-size: 15px;
+}
+.save_from{
+  position: absolute;;
+  top: -94px;
+  left: -17px;
+}
+.save_div{
+  /*position: absolute;*/
+  height: 0px;
+  top: -94px;
+  left: -17px;
+}
+.edit_label_button{
+  position: relative;
+  top: 0px;
+  left: -6px;
+  width: 41px;
+}
+.delete_label_button{
+  position: relative;
+      top: 0px;
+      left: 0px;
+      width: 41px;
+}
+.label{
+  position: relative;
+      top: 0px;
+      left: 220px;
+      color: black;
+      font-size: 15px;
+}
+.error{
+  color: red;
+  margin-left: 40px;
+}
+.date{
+  position: relative;
+  top: -29px;
+  left: 190px;
+}
+.div{
+  margin-top: 60px;
+}
+.label_add_button{
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+.user_add_button{
+  list-style-type: none;
+}

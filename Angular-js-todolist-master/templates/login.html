@@ -1,0 +1,29 @@
+<div class="col-md-6 col-md-offset-3">
+
+    <h2 class="login_title">Login</h2>
+
+    <form name="form" class=" login_box" ng-submit="login()" role="form">
+
+        <div class="input_box">
+
+            <div class="form-group">
+                <label for="email">eMail</label>
+                <span class='glyphicon glyphicon-user user_icon'></span>
+                <input type="email" name="email" class="form-control user" ng-model="formModel.u_email" ng-pattern="regex" ng-pattern-err-type="bademail" placeholder="Insert your eMail" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="pass">Password</label>
+                <span class="glyphicon glyphicon-lock pass_icon"></span>
+                <input type="password" name="pass" class="form-control pass" ng-model="formModel.u_pass" ng-minlength="6" placeholder="Insert your Password" required/>
+
+            </div>
+            <span class="error" required>
+                {{error}}
+            </span>
+            <div class="form-actions login_button">
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </form>
+</div>

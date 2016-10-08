@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app="TaskManager">
+
+    <title>Todo-List</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="Angular-js-todolist-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Angular-js-todolist-master/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="Angular-js-todolist-master/css/common.css">
+    <!-- <link rel="stylesheet" href="Angular-js-todolist-master/css/taskCss.css">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="Angular-js-todolist-master/img/todoIcon.ico" type="image/x-icon">
+
+    <script src="Angular-js-todolist-master/js/libs/jquery.min.js"></script>
+    <script src="Angular-js-todolist-master/js/libs/jquery-ui.min.js"></script>
+    <script src="Angular-js-todolist-master/js/libs/jquery.ui.touch-punch.min.js"></script>
+    <script src="Angular-js-todolist-master/js/libs/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="Angular-js-todolist-master/js/libs/sortable.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script src="Angular-js-todolist-master/ui-bootstrap-tpls-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.min.js"></script>
+
+    <script src="Angular-js-todolist-master/App.js"></script>
+    <script src="Angular-js-todolist-master/serveses/data.js"></script>
+    <script src="Angular-js-todolist-master/controllers/headerController.js"></script>
+    <script src="Angular-js-todolist-master/controllers/loginController.js"></script>
+    <script src="Angular-js-todolist-master/controllers/taskController.js"></script>
+    <script src="Angular-js-todolist-master/controllers/registerController.js"></script>
+    <script src="Angular-js-todolist-master/controllers/usersController.js"></script>
+    <script src="Angular-js-todolist-master/controllers/labelController.js"></script>
+    <script src="Angular-js-todolist-master/js/directives/angular.editInPlace.js"></script>
+    <!-- <script src="Angular-js-todolist-master/js/directives/angular.ngEnter.js"></script> -->
+    <script src="Angular-js-todolist-master/js/libs/bower_components/angular-auto-validate/dist/jcs-auto-validate.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> <![endif]-->
+
+    <!-- <body ng-controller="TodoCtrl" ng-init="init()"> -->
+    <body >
+        <div ng-controller="headerController">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div>
+                        <span class="navbar-brand">Welcome
+                            {{user}}</span>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <!-- <li class="active"><a href="#/login">Home</a></li> -->
+                        <li ng-show="isActive('/task') || isActive('/label') || isActive('/users')">
+                            <a href="#/task">Task</a>
+                        </li>
+                        <li ng-show="isActive('/task') || isActive('/users') || isActive('/label')">
+                            <a href="#/label">Label</a>
+                        </li>
+                        <li ng-show="(isActive('/label') || isActive('/task') || isActive('/users')) && users == true">
+                            <a href="#/users">Users</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-hide="isActive('/login') || isActive('/register')" ng-click="logout()">
+                            <a href="#/login">
+                                <span class="glyphicon glyphicon-log-out"></span>
+                                Log Out</a>
+                        </li>
+                        <li ng-hide="isActive('/task') || isActive('/register') || isActive('/label') || isActive('/users')">
+                            <a href="#/register">
+                                <span class="glyphicon glyphicon-user"></span>
+                                Sign Up</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div ng-view></div>
+    </body>
+</html>

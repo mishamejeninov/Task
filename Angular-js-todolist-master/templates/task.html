@@ -1,0 +1,138 @@
+<div class="col-md-6 col-md-offset-3">
+
+    <h1 class="task_title">
+        To-do List App
+    </h1>
+
+    <form class="task_box" name="form" ng-submit="addNew()">
+
+        <div class="task_input">
+
+            <div class="form-group">
+                <label for="description">
+                    Description
+                </label>
+                <span class='glyphicon glyphicon-pencil task_description_icon'></span>
+                <input type="text" id="description" class="form-control reg" ng-maxlength="20" placeholder="What do you need to do?" ng-model="newTask.t_subject">
+            </div>
+
+            <div class="form-group">
+                <label for="description">
+                    Date
+                </label>
+                <div class="row">
+
+                    <div class="col-md-11">
+                        <p class="input-group">
+                            <input
+                                type="text"
+                                class="form-control form-group"
+                                ng-click="open()"
+                                uib-datepicker-popup="{{format}}"
+                                ng-model="dt"
+                                is-open="popup.opened"
+                                datepicker-options="dateOptions"
+                                ng-required="true"
+                                close-text="Close"
+                                alt-input-formats="altInputFormats"
+                                disable-invalid-styling="true"
+                                disable-validation-message/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default date-edit-btn" ng-click="open()">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="category">
+                    Category
+                </label>
+                <span class='glyphicon glyphicon-list-alt task_category_icon'></span>
+                <select id="category" class="form-control reg" ng-model="newTask.lb_id">
+                    <option value="">
+                        Choose a category
+                    </option>
+                    <option ng-repeat="label in labels" value="{{label.lb_id}}">{{label.lb_name}}</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary add_button" ng-click="submit">
+                    <i class="fa fa-plus icon"></i>
+                    Add task
+                </button>
+
+            </div>
+        </form>
+
+    </div>
+</div>
+<br/><br/><br/>
+<!-- task_input  -->
+<div class="col-lg-10 col-sm-offset-1 text-center div">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Task Number</th>
+                    <th>Task Name</th>
+                    <th>Date</th>
+                    <th>Done</th>
+                    <th>Label</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="todo in tasks track by $index">
+                    <td>
+                        {{ $index + 1 }}
+                    </td>
+                    <td>
+                        <input ng-show="editMode" type="text" class="form-control input-xs text-center" ng-model="todo.t_subject" required/>
+                        <span data-toggle="tooltip" title="Click To Edit" ng-click="editMode = true" class="complete-{{ todo.complete }} t_subject" ng-show="!editMode">
+                            {{todo.t_subject}}
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            {{todo.t_due_date | date}}
+                        </span>
+                    </td>
+                    <td>
+                        <input type="checkbox" ng-model="todo.complete" ng-model="complete-{{todos.checked}}">
+
+                    </td>
+                    <td>
+                        <span>
+                            {{todo.lb_name}}
+                        </span>
+
+                    </td>
+                    <td>
+                        <button data-toggle="tooltip" title="Click To Edit" data-placement="top" ng-hide="editMode" type="button" ng-click="editMode = true" class="btn btn-primary edit_label_button">
+                            <span class='glyphicon glyphicon-pencil task_button_edit_icon' aria-hidden="true"></span>
+                        </button>
+                        <form ng-show="editMode" ng-submit="editMode = false" ng-click="editTask(todo)">
+                            <span class="btn-group">
+                                <button type="submit" class="btn btn-success" aria-label="Left Align">
+                                    <span class='glyphicon glyphicon-floppy-saved task_button_save_icon'></span>
+                                </button>
+                            </span>
+                        </form>
+                    </td>
+                    <td>
+                        <button type="button" ng-click="deleteTask(todo.t_id)" class="btn btn-danger delete_label_button" aria-label="Left Align">
+                            <span class='glyphicon glyphicon-trash' aria-hidden="true"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
